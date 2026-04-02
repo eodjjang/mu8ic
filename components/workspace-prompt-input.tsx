@@ -810,8 +810,20 @@ export const PromptInputBox = React.forwardRef<HTMLDivElement, PromptInputBoxPro
 )
 PromptInputBox.displayName = "PromptInputBox"
 
+export type WorkspacePromptDockProps = {
+  className?: string
+  onSend?: PromptInputBoxProps["onSend"]
+  isLoading?: boolean
+  placeholder?: string
+}
+
 /** Fixed dock for workspace page — prompt bar pinned to bottom */
-export function WorkspacePromptDock({ className }: { className?: string }) {
+export function WorkspacePromptDock({
+  className,
+  onSend,
+  isLoading,
+  placeholder,
+}: WorkspacePromptDockProps) {
   return (
     <div
       className={cn(
@@ -820,7 +832,7 @@ export function WorkspacePromptDock({ className }: { className?: string }) {
       )}
     >
       <div className="pointer-events-auto mx-auto w-full max-w-3xl">
-        <PromptInputBox />
+        <PromptInputBox onSend={onSend} isLoading={isLoading} placeholder={placeholder} />
       </div>
     </div>
   )
