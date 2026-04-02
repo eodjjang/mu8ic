@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server"
 export async function GET(request: Request) {
   const url = new URL(request.url)
   const code = url.searchParams.get("code")
-  const nextRaw = url.searchParams.get("next") ?? "/"
+  const nextRaw = url.searchParams.get("next") ?? "/workspace"
   const next = nextRaw.startsWith("/") && !nextRaw.startsWith("//") ? nextRaw : "/"
 
   if (!code) {

@@ -38,7 +38,7 @@ export function AuthClient() {
 
   useEffect(() => {
     if (!loading && user) {
-      router.replace("/")
+      router.replace("/workspace")
     }
   }, [loading, user, router])
 

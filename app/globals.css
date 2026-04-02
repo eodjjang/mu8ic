@@ -26,3 +26,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Workspace prompt textarea — scrollbar (replaces injected styles from reference) */
+.workspace-prompt-textarea:focus-visible {
+  outline: none;
+}
+
+.workspace-prompt-textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.workspace-prompt-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.workspace-prompt-textarea::-webkit-scrollbar-thumb {
+  background-color: #444444;
+  border-radius: 3px;
+}
+
+.workspace-prompt-textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+}
